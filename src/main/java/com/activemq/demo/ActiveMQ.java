@@ -14,9 +14,9 @@ import java.util.Scanner;
  */
 @Controller
 public class ActiveMQ {
-    @RequestMapping("/mq")
+    @RequestMapping("/test")
     public String sendMessage() {
-        return "mq";
+        return "test";
     }
 
 //    public static void main(String[] args) {
