@@ -17,10 +17,11 @@ public class kafka {
     /**
      * 指定分区发送内容
      */
-    @RequestMapping("/test")
-    public String show() {
-        String data = "{\"databases\":{\"3\":[{\"branch\":0,\"downSample\":0,\"key\":\"topic\",\"value\":\"yt\"}],\"5\":[{\"branch\":0,\"downSample\":3,\"key\":\"key\",\"value\":\"key1\"}]},\"collectorTargetCode\":\"33045mmyt\",\"sensorTargetCode\":\"oommyt\",\"sensorElementEname\":\"OO\",\"sensorProjectCode\":\"ceshi\",\"sensorPlaceFirmCode\":\"91320681322215290H\",\"branch\":0,\"downSample\":0,\"sampleTime\":1588097430000,\"receiveTime\":1588097430000,\"createTime\":0,\"value\":71,\"mpType\":\"Rtd\"}";
-        kafkaTemplate.send("yt",2,null, data);
-        return data;
+    @RequestMapping("/kafka")
+    public String show(String text) {
+//        String data = "{\"databases\":{\"3\":[{\"branch\":0,\"downSample\":0,\"key\":\"topic\",\"value\":\"yt\"}],\"5\":[{\"branch\":0,\"downSample\":3,\"key\":\"key\",\"value\":\"key1\"}]},\"collectorTargetCode\":\"33045mmyt\",\"sensorTargetCode\":\"oommyt\",\"sensorElementEname\":\"OO\",\"sensorProjectCode\":\"ceshi\",\"sensorPlaceFirmCode\":\"91320681322215290H\",\"branch\":0,\"downSample\":0,\"sampleTime\":1588098030000,\"receiveTime\":1588098030000,\"createTime\":0,\"value\":45.5,\"mpType\":\"Rtd\"}";
+        kafkaTemplate.send("yt",2,null, text);
+        return "发送成功---" + text;
     }
+
 }
